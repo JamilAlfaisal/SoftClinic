@@ -1,0 +1,119 @@
+
+
+@if (drawerOpen()){
+    <header class="sidebar-header">
+        <div class="row">
+            <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
+            <div class="header-text">
+                <h2>SoftClinic</h2>
+                <p>Softwave CS</p>
+            </div>
+        </div>
+        <button type="button" class="styless-button" (click)="toggleDrawer()">
+            <img src="menu.svg" alt="Menu" class="menu-icon">
+        </button>
+    </header>
+    <div class="main-content">
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a routerLink="/patients" routerLinkActive="active" class="list-style">
+                        <img src="patients.svg" alt="Patients" class="nav-icon">
+                        <span>Patients</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/doctors" routerLinkActive="active" class="list-style">
+                        <img src="doctors.svg" alt="Doctors" class="nav-icon">
+                        <span>Doctors</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/act" routerLinkActive="active" class="list-style">
+                        <img src="act.svg" alt="act" class="nav-icon">
+                        <span>Act</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="list-style">
+                        <img src="reminder.svg" alt="Settings" class="nav-icon">
+                        <span>Reminder</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-style">
+                        <img src="bell.svg" alt="Settings" class="nav-icon">
+                        <span>Users</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <footer class="sidebar-footer">
+            <div class="user-info row">
+                <img 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10" 
+                    alt="Settings" 
+                    class="footer-icon"
+                >
+                <div class="user-details">
+                    <h4>Slaymane AH</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+            <button class="styless-button">
+                <img src="menu_2.svg" alt="Logout" class="">
+            </button>
+        </footer>
+    </div>
+}@else{
+    <header class="sidebar-header">
+        <div class="row">
+            <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
+        </div>
+    </header>
+    <div class="main-content">
+        <nav class="sidebar-nav">
+            <ul class="col">
+                <li>
+                    <a routerLink="/patients" routerLinkActive="active" class="list-style">
+                        <img src="patients.svg" alt="Patients" class="menu-icon">
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/doctors" routerLinkActive="active" class="list-style">
+                        <img src="doctors.svg" alt="Doctors" class="menu-icon">
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/act" routerLinkActive="active" class="list-style">
+                        <img src="act.svg" alt="act" class="menu-icon">
+                    </a>
+                </li>
+                <li>
+                    <div class="list-style">
+                        <img src="reminder.svg" alt="Settings" class="menu-icon">
+                    </div>
+                </li>
+                <li>
+                    <div class="list-style">
+                        <img src="bell.svg" alt="Settings" class="menu-icon">
+                    </div>
+                </li>
+                <li>
+                   <button type="button" class="styless-button" (click)="toggleDrawer()">
+                        <img src="menu.svg" alt="Menu" class="menu-icon">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <footer class="sidebar-footer">
+            <div class="row">
+                <img 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10" 
+                    alt="Settings" 
+                    class="footer-icon"
+                >
+            </div>
+        </footer>
+    </div>
+}

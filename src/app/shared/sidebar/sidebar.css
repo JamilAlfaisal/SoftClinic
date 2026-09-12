@@ -1,0 +1,146 @@
+:host{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #102A43;
+    border-right: 1px solid #D9E1EA;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 0px 1px 2px 0px #1018280A;
+    box-shadow: 0px 2px 6px 0px #1018280A;
+}
+
+:host(.isNotCollapsed) {
+  width: 260px;
+}
+
+/* Collapsed state */
+:host(.isCollapsed) {
+  width: 80px;
+}
+
+
+.sidebar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height:70px;
+    gap: 10px;
+    font-size: 0.75rem;
+    padding: 0px 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+.header-text h2{
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.header-text p{
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 15.5px;
+    color: #8A96A8;
+}
+
+.row{
+    gap: 10px;
+}
+
+
+.btn{
+    background: transparent;
+    border: none;
+}
+
+.menu-icon{
+    width: 25px;
+    height: 25px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.list-style{
+    display: flex;
+    gap: 10px;
+    padding: 10px 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.sidebar-nav{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0px 10px 0px;
+}
+
+.main-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer {
+    padding: 15px 20px;
+    color: #8A96A8;
+    font-size: 12px;
+    border-top: 1px solid #D9E1EA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-icon{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 10px;
+}
+
+.user-details{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-details h4{
+    font-weight: 300;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.user-details p{
+    font-weight: 400;
+    font-size: 15px;
+    color: #8A96A8;
+}

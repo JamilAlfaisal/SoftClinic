@@ -1,0 +1,23 @@
+
+<div class="login-container">
+    <section class="partition left">
+        <p>Your healthcare companion for managing
+             medical information and family accounts.
+              This app provides secure access to your and your family’s medical files provided by your clinic, 
+              appointment reminders and balance statements - all in one convenient place.
+        </p>
+    </section>
+    <section class="partition right">
+        <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
+        <h2>SoftClinic</h2>
+        <h4>Softwave CS</h4>
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+            <input type="text" id="username" formControlName="username" placeholder="Username">
+            <input type="password" id="password" formControlName="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+        <footer>
+            <p>&copy; 2023 SoftClinic. All rights reserved.</p>
+        </footer>
+    </section>
+</div>
