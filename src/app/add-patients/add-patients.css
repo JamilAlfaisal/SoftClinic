@@ -1,0 +1,181 @@
+.mainContainer{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9E1EA;
+    box-shadow: 0px 1px 2px 0px #1018280A;
+    box-shadow: 0px 2px 6px 0px #1018280A;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 20px 10px 20px;
+    gap: 5px;
+}
+
+.header-actions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 20px;
+}
+
+.header div{
+    width: 100%;
+}
+.header div h2{
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+}
+
+.header div p{
+    font-weight: 300;
+    font-style: Regular;
+    font-size: 14px;
+    color: #4F5548;
+}
+
+.content {
+    flex: 1;
+    height: 100%;
+    background: #F9FAFB;
+}
+
+#save-button{
+    background: #163B63;
+    color: #FFFFFF;
+    border: none;
+    max-width: 100px;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: medium;
+}
+
+#discard-button{
+    background: #DDEAF5;
+    color: #163B63;
+    border: none;
+    max-width: 100px;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: medium;
+}
+
+
+.inputs-container{
+    display: flex;
+    color: #536176;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.input-with-icon{
+    width: 246.5px;
+    height: 40px;
+    justify-content: space-between;
+    opacity: 1;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 8px;
+    border-width: 1px;
+    border: 1px solid #D9E1EA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-with-icon input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-with-icon:focus-within{
+    border: 2px solid #28689C;
+    outline: none; 
+}
+
+.input-with-icon{
+    position: relative;
+}
+
+.input-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+
+.select:focus{
+    border: none;
+    outline: none; 
+}
+
+.select{
+    width: 100%;
+    border: none;
+    color: #757575;
+}
+
+.input-field{
+    color: #172033;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+}
+
+.dob{
+    color: #757575;
+}
+
+.dob.ng-dirty{
+    color: #172033;
+}
+
+.select.ng-dirty{
+    color: #172033;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+}
+
+.duoble-width{
+    width: 536px !important;
+}
+
+.red-input-field{
+    border: 1px solid #D98522 !important;
+    background-color: #FFF5E8 !important;
+}
+
+.green-input-field{
+    border: 1px solid #17824A !important;
+    background-color: #EAF7F1 !important;
+}

@@ -1,0 +1,29 @@
+:host{
+    position: relative;
+    display: block;
+    max-width: 95%;
+    height: auto;
+    padding: 10px;
+    margin: 10px; 
+    background-color: red;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 0px #1018280A; 
+    box-shadow: 0px 2px 6px 0px #1018280A;
+    border: 1px solid #D9E1EA;
+    background-color: #ffffff;
+}
+
+.heading{
+    border-bottom: #D9E1EA solid 1px;
+    padding: 10px 0px;
+    color: #172033;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.body{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

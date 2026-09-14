@@ -1,0 +1,8 @@
+{
+  "/api/countries": {
+    "target": "https://countries.dev",
+    "pathRewrite": { "^/api/countries": "/countries" },
+    "changeOrigin": true,
+    "secure": true
+  }
+}
