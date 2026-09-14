@@ -8,6 +8,7 @@
     transition: width 0.3s ease-in-out;
     box-shadow: 0px 1px 2px 0px #1018280A;
     box-shadow: 0px 2px 6px 0px #1018280A;
+    padding-right: 10px;
 }
 
 :host(.isNotCollapsed) {
@@ -71,9 +72,10 @@
 .list-style{
     display: flex;
     gap: 10px;
-    padding: 10px 0px;
+    padding: 10px 10px;
     color: #FFFFFF;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 ul{
@@ -143,4 +145,32 @@ ul{
     font-weight: 400;
     font-size: 15px;
     color: #8A96A8;
+}
+
+.list-style:hover{
+    background-color: #163B63;
+}
+
+.selected{
+    background-color: #1D4E7A;
+}
+
+.toggle-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-list-items{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.suboptions {
+    display: flex;
+    justify-content: space-between;
 }

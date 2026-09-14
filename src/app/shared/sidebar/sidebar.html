@@ -1,119 +1,180 @@
-
-
 @if (drawerOpen()){
-    <header class="sidebar-header">
-        <div class="row">
-            <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
-            <div class="header-text">
-                <h2>SoftClinic</h2>
-                <p>Softwave CS</p>
-            </div>
+<header class="sidebar-header">
+    <div class="row">
+        <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
+        <div class="header-text">
+            <h2>SoftClinic</h2>
+            <p>Softwave CS</p>
         </div>
-        <button type="button" class="styless-button" (click)="toggleDrawer()">
-            <img src="menu.svg" alt="Menu" class="menu-icon">
-        </button>
-    </header>
-    <div class="main-content">
-        <nav class="sidebar-nav">
-            <ul>
-                <li>
-                    <a routerLink="/patients" routerLinkActive="active" class="list-style">
-                        <img src="patients.svg" alt="Patients" class="nav-icon">
-                        <span>Patients</span>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/doctors" routerLinkActive="active" class="list-style">
-                        <img src="doctors.svg" alt="Doctors" class="nav-icon">
-                        <span>Doctors</span>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/act" routerLinkActive="active" class="list-style">
-                        <img src="act.svg" alt="act" class="nav-icon">
-                        <span>Act</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="list-style">
-                        <img src="reminder.svg" alt="Settings" class="nav-icon">
-                        <span>Reminder</span>
+    </div>
+    <button type="button" class="styless-button" (click)="toggleDrawer()">
+        <img src="menu.svg" alt="Menu" class="menu-icon">
+    </button>
+</header>
+<div class="main-content">
+    <nav class="sidebar-nav">
+        <ul>
+            <li>
+                <a routerLink="/patients" routerLinkActive="active" class="list-style" (click)="selectedOption.set(1)"
+                    [class.selected]="selectedOption() === 1">
+                    <img src="patients.svg" alt="Patients" class="nav-icon">
+                    <span>Patients</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/doctors" routerLinkActive="active" class="list-style" (click)="selectedOption.set(2)"
+                    [class.selected]="selectedOption() === 2">
+                    <img src="doctors.svg" alt="Doctors" class="nav-icon">
+                    <span>Doctors</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/act" routerLinkActive="active" class="list-style" (click)="selectedOption.set(3)"
+                    [class.selected]="selectedOption() === 3">
+                    <img src="act.svg" alt="act" class="nav-icon">
+                    <span>Act</span>
+                </a>
+            </li>
+            <li>
+
+                <!-- <div> -->
+                    <div class="toggle-list list-style" >
+                        <div class="row">
+                            <img src="reminder.svg" alt="Reminder" class="nav-icon">
+                            <span>Reminder</span>
+                        </div>
+                        <button (click)="toggleReminder.set(!toggleReminder())"
+                            class="styless-button chevron">▼</button>
                     </div>
-                </li>
-                <li>
-                    <div class="list-style">
+
+                    @if (toggleReminder()){
+                    <div class="toggle-list-items">
+                        <a routerLink="/Doctor-Appointment" routerLinkActive="active" class="list-style full-width suboptions"
+                            (click)="selectedOption.set(4)" [class.selected]="selectedOption() === 4">
+                            <div class="row">
+                                <img src="currency.svg" alt="Doctor-Appointment" class="nav-icon">
+                                <span>Doctor Appointment</span>
+                            </div>
+                            <button class="styless-button"><img src="Vector.svg" alt="vector"></button>
+                        </a>
+
+                        <a routerLink="/Balance-Reminder" routerLinkActive="active" class="list-style full-width"
+                            (click)="selectedOption.set(5)" [class.selected]="selectedOption() === 5">
+                            <img src="currency.svg" alt="Balance-Reminder" class="nav-icon">
+                            <span>Balance Reminder</span>
+                        </a>
+
+                        <a routerLink="/General-Note" routerLinkActive="active" class="list-style full-width"
+                            (click)="selectedOption.set(6)" [class.selected]="selectedOption() === 6">
+                            <img src="currency.svg" alt="General-Note" class="nav-icon">
+                            <span>General Note</span>
+                        </a>
+                    </div>
+
+                    }
+                <!-- </div> -->
+            </li>
+            <li>
+                <div class="toggle-list list-style">
+                    <div class="row">
                         <img src="bell.svg" alt="Settings" class="nav-icon">
                         <span>Users</span>
                     </div>
-                </li>
-            </ul>
-        </nav>
-        <footer class="sidebar-footer">
-            <div class="user-info row">
-                <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10" 
-                    alt="Settings" 
-                    class="footer-icon"
-                >
-                <div class="user-details">
-                    <h4>Slaymane AH</h4>
-                    <p>Administrator</p>
+                    <button (click)="toggleUsers.set(!toggleUsers())"
+                            class="styless-button chevron">▼</button>
                 </div>
+
+                @if (toggleUsers()){
+                    <div class="toggle-list-items">
+                        <a routerLink="/User-Patients" routerLinkActive="active" class="list-style full-width suboptions"
+                            (click)="selectedOption.set(7)" [class.selected]="selectedOption() === 7">
+                            <div class="row">
+                                <img src="currency.svg" alt="User-Patients" class="nav-icon">
+                                <span>User - Patients</span>
+                            </div>
+                            <button class="styless-button"><img src="Vector.svg" alt="vector"></button>
+                        </a>
+
+                        <a routerLink="/User-Admin" routerLinkActive="active" class="list-style full-width"
+                            (click)="selectedOption.set(8)" [class.selected]="selectedOption() === 8">
+                            <img src="currency.svg" alt="User-Admin" class="nav-icon">
+                            <span>User - Admin</span>
+                        </a>
+                    </div>
+                }
+            </li>
+            <li>
+                <a routerLink="/social-zone" routerLinkActive="active" class="list-style"
+                    (click)="selectedOption.set(9)" [class.selected]="selectedOption() === 9">
+                    <img src="social_zones.svg" alt="Doctors" class="nav-icon">
+                    <span>Social Zones</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <footer class="sidebar-footer">
+        <div class="user-info row">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10"
+                alt="Settings" class="footer-icon">
+            <div class="user-details">
+                <h4>Slaymane AH</h4>
+                <p>Administrator</p>
             </div>
-            <button class="styless-button">
-                <img src="menu_2.svg" alt="Logout" class="">
-            </button>
-        </footer>
-    </div>
-}@else{
-    <header class="sidebar-header">
-        <div class="row">
-            <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
         </div>
-    </header>
-    <div class="main-content">
-        <nav class="sidebar-nav">
-            <ul class="col">
-                <li>
-                    <a routerLink="/patients" routerLinkActive="active" class="list-style">
-                        <img src="patients.svg" alt="Patients" class="menu-icon">
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/doctors" routerLinkActive="active" class="list-style">
-                        <img src="doctors.svg" alt="Doctors" class="menu-icon">
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/act" routerLinkActive="active" class="list-style">
-                        <img src="act.svg" alt="act" class="menu-icon">
-                    </a>
-                </li>
-                <li>
-                    <div class="list-style">
-                        <img src="reminder.svg" alt="Settings" class="menu-icon">
-                    </div>
-                </li>
-                <li>
-                    <div class="list-style">
-                        <img src="bell.svg" alt="Settings" class="menu-icon">
-                    </div>
-                </li>
-                <li>
-                   <button type="button" class="styless-button" (click)="toggleDrawer()">
-                        <img src="menu.svg" alt="Menu" class="menu-icon">
-                    </button>
-                </li>
-            </ul>
-        </nav>
-        <footer class="sidebar-footer">
-            <div class="row">
-                <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10" 
-                    alt="Settings" 
-                    class="footer-icon"
-                >
-            </div>
-        </footer>
+        <button class="styless-button">
+            <img src="menu_2.svg" alt="Logout" class="">
+        </button>
+    </footer>
+</div>
+}@else{
+<header class="sidebar-header">
+    <div class="row">
+        <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
     </div>
+</header>
+<div class="main-content">
+    <nav class="sidebar-nav">
+        <ul class="col">
+            <li>
+                <a routerLink="/patients" routerLinkActive="active" class="list-style" (click)="selectedOption.set(1)"
+                    [class.selected]="selectedOption() === 1">
+                    <img src="patients.svg" alt="Patients" class="menu-icon">
+                </a>
+            </li>
+            <li>
+                <a routerLink="/doctors" routerLinkActive="active" class="list-style" (click)="selectedOption.set(2)"
+                    [class.selected]="selectedOption() === 2">
+                    <img src="doctors.svg" alt="Doctors" class="menu-icon">
+                </a>
+            </li>
+            <li>
+                <a routerLink="/act" routerLinkActive="active" class="list-style" (click)="selectedOption.set(3)"
+                    [class.selected]="selectedOption() === 3">
+                    <img src="act.svg" alt="act" class="menu-icon">
+                </a>
+            </li>
+            <li>
+                <div class="list-style" (click)="selectedOption.set(4)" [class.selected]="selectedOption() === 4">
+                    <img src="reminder.svg" alt="Settings" class="menu-icon">
+                </div>
+            </li>
+            <li>
+                <div class="list-style" (click)="selectedOption.set(5)" [class.selected]="selectedOption() === 5">
+                    <img src="bell.svg" alt="Settings" class="menu-icon">
+                </div>
+            </li>
+            <li>
+                <button type="button" class="styless-button" (click)="toggleDrawer()">
+                    <img src="menu.svg" alt="Menu" class="menu-icon">
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <footer class="sidebar-footer">
+        <div class="row">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-3lYDW2oR7QNGu4d_xEO-ruTkuTLXKZrpxzJQZozrhBjMon9GnduC7o&s=10"
+                alt="Settings" class="footer-icon">
+        </div>
+    </footer>
+</div>
 }
