@@ -1,23 +1,42 @@
-<div class="patients-container">
-    <app-sidebar></app-sidebar>
-    <div class="content">
-        <header class="header">
-            <div class="header-info">
-                <h2>Patients</h2>
-                <p>Open, Monitor and Close patients files</p>
-            </div>
-            <div class="header-actions">
-                <input type="text" placeholder="Search..." class="search-input">
-                <button class="filter-button"><img src="qr_code.svg" alt="Filter" class="filter-icon"></button>
-                <button class="add-patient-button">
-                    <div class="row">
-                        <img src="plus.svg" alt="Add Patient" class="add-patient-icon">
-                        <p>Add Patient</p>
-                    </div>
-                </button>
-            </div>
-        </header>
-        <h1>Patients</h1>
-        <p>Welcome to the Patients page. Here you can manage patient information and view their medical records.</p>
-    </div>
+<app-sidebar></app-sidebar>
+<div class="content">
+    <header class="header">
+        <div class="header-info">
+            <h2>Patients</h2>
+            <p>Open, Monitor and Close patients files</p>
+        </div>
+        <div class="header-actions">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="filter-button"><img src="qr_code.svg" alt="Filter" class="filter-icon"></button>
+            <button type="button" class="add-patient-button row" routerLink="/add-patients">
+                <img src="plus.svg" alt="Add Patient Icon" class="add-patient-icon">
+                <span>Add Patient</span>
+            </button>
+        </div>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>File Number</th>
+                <th>First Name</th>
+                <th>Father Name</th>
+                <th>Last Name</th>
+                <th>Phone 1</th>
+                <th>Phone 2</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for ( patient of patients; track patient.fileNumber ){
+                <tr>
+                    <td>{{patient.fileNumber}}</td>
+                    <td>{{patient.firstName}}</td>
+                    <td>{{patient.fatherName}}</td>
+                    <td>{{patient.lastName}}</td>
+                    <td>{{patient.phone1}}</td>
+                    <td>{{patient.phone2}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
