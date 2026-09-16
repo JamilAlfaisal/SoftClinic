@@ -1,3 +1,10 @@
+@if (countries.succes() === "Loading"){
+    <div class="mainContainer">
+        <p>loading...</p>
+    </div>
+}@else if(countries.succes() === "Error"){
+    <p>Error Occured, please top the server and rerun it using the following command "npm start" ;)</p>
+}@else{
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mainContainer">
     <app-sidebar></app-sidebar>
     <div class="content">
@@ -7,10 +14,15 @@
                 <p>Create a new patient file</p>
             </div>
             <div class="header-actions">
+                @if(fileNumber()){
+                    <button type="button" class="styless-button" id="delete-button" (click)="onDelete()">
+                        <u>Delete</u>
+                    </button>
+                }
                 <button type="button" class="add-patient-button row" id="discard-button" routerLink="/patients">
                     <span>Discard</span>
                 </button>
-                <button type="submit" class="row" id="save-button" routerLink="/add-patients">
+                <button type="submit" class="row" id="save-button">
                     <span>Save</span>
                 </button>
             </div>
@@ -22,7 +34,7 @@
                     <input type="text" class="input-field" placeholder="Enter file number"
                         formControlName="fileNumber" />
                     @if(this.form.value.personalInformation?.fileNumber){
-                    <button class="styless-button" (click)="this.form.get('personalInformation.fileNumber')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('personalInformation.fileNumber')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -33,7 +45,7 @@
                 <div class="input-with-icon">
                     <input type="text" class="input-field" placeholder="Enter first name" formControlName="firstName" />
                     @if(this.form.value.personalInformation?.firstName){
-                    <button class="styless-button" (click)="this.form.get('personalInformation.firstName')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('personalInformation.firstName')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -45,7 +57,7 @@
                     <input type="text" class="input-field" placeholder="Enter father name"
                         formControlName="fatherName" />
                     @if(this.form.value.personalInformation?.fatherName){
-                    <button class="styless-button" (click)="this.form.get('personalInformation.fatherName')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('personalInformation.fatherName')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -56,7 +68,7 @@
                 <div class="input-with-icon">
                     <input type="text" class="input-field" placeholder="Enter last name" formControlName="lastName" />
                     @if(this.form.value.personalInformation?.lastName){
-                    <button class="styless-button" (click)="this.form.get('personalInformation.lastName')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('personalInformation.lastName')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -73,8 +85,8 @@
                 <div class="input-with-icon">
                     <select formControlName="gender" class="select">
                         <option value="" disabled selected>Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
             </div>
@@ -84,7 +96,7 @@
                     <select formControlName="nationality" class="select">
                         <option value="" disabled selected>Select Nationality</option>
                         @for(country of this.countries.allCountries(); track country){
-                            <option>{{country.demonym}}</option>
+                        <option>{{country.demonym}}</option>
                         }
                     </select>
                 </div>
@@ -92,10 +104,9 @@
             <div class="inputs-container">
                 <span>ID Number</span>
                 <div class="input-with-icon">
-                    <input type="text" class="input-field" placeholder="Enter father name"
-                        formControlName="idNumber" />
+                    <input type="text" class="input-field" placeholder="Enter father name" formControlName="idNumber" />
                     @if(this.form.value.personalInformation?.idNumber){
-                    <button class="styless-button" (click)="this.form.get('personalInformation.idNumber')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('personalInformation.idNumber')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -106,23 +117,21 @@
             <div class="inputs-container">
                 <span>Phone 1</span>
                 <div class="input-with-icon">
-                    <input type="text" class="input-field" placeholder="e.g. +9616445567"
-                        formControlName="phone1" />
+                    <input type="text" class="input-field" placeholder="e.g. +9616445567" formControlName="phone1" />
                     @if(this.form.value.contactInformation?.phone1){
-                    <button class="styless-button" (click)="this.form.get('contactInformation.phone1')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('contactInformation.phone1')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
                 </div>
             </div>
 
-             <div class="inputs-container">
+            <div class="inputs-container">
                 <span>Phone 2</span>
                 <div class="input-with-icon">
-                    <input type="text" class="input-field" placeholder="e.g. +9616445567"
-                        formControlName="phone2" />
+                    <input type="text" class="input-field" placeholder="e.g. +9616445567" formControlName="phone2" />
                     @if(this.form.value.contactInformation?.phone2){
-                    <button class="styless-button" (click)="this.form.get('contactInformation.phone2')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('contactInformation.phone2')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -132,10 +141,9 @@
             <div class="inputs-container">
                 <span>Email</span>
                 <div class="input-with-icon">
-                    <input type="text" class="input-field" placeholder="Enter email address"
-                        formControlName="email" />
+                    <input type="text" class="input-field" placeholder="Enter email address" formControlName="email" />
                     @if(this.form.value.contactInformation?.email){
-                    <button class="styless-button" (click)="this.form.get('contactInformation.email')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('contactInformation.email')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -148,7 +156,8 @@
                     <input type="text" class="input-field" placeholder="Enter full address"
                         formControlName="addressDetails" />
                     @if(this.form.value.contactInformation?.addressDetails){
-                    <button class="styless-button" (click)="this.form.get('contactInformation.addressDetails')?.reset();">
+                    <button type="button" class="styless-button"
+                        (click)="this.form.get('contactInformation.addressDetails')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -158,10 +167,9 @@
             <div class="inputs-container">
                 <span>City</span>
                 <div class="input-with-icon">
-                    <input type="text" class="input-field" placeholder="Enter City"
-                        formControlName="city" />
+                    <input type="text" class="input-field" placeholder="Enter City" formControlName="city" />
                     @if(this.form.value.contactInformation?.city){
-                    <button class="styless-button" (click)="this.form.get('contactInformation.city')?.reset();">
+                    <button type="button" class="styless-button" (click)="this.form.get('contactInformation.city')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -174,7 +182,7 @@
                     <select formControlName="country" class="select">
                         <option value="" disabled selected>Select Country</option>
                         @for(country of this.countries.allCountries(); track country){
-                            <option>{{country.name}}</option>
+                        <option>{{country.name}}</option>
                         }
                     </select>
                 </div>
@@ -186,10 +194,10 @@
                 <span>Balance in USD</span>
                 <div class="input-with-icon red-input-field">
                     <span style="padding-right: 5px;">$</span>
-                    <input type="text" class="input-field" placeholder="0.00"
-                        formControlName="balanceInUsd" />
+                    <input type="text" class="input-field" placeholder="0.00" formControlName="balanceInUsd" />
                     @if(this.form.value.accountAndFinancial?.balanceInUsd){
-                    <button class="styless-button" (click)="this.form.get('accountAndFinancial.balanceInUsd')?.reset();">
+                    <button type="button" class="styless-button"
+                        (click)="this.form.get('accountAndFinancial.balanceInUsd')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -200,10 +208,10 @@
                 <span>Balance in LBP</span>
                 <div class="input-with-icon red-input-field">
                     <span style="padding-right: 5px;">L.L</span>
-                    <input type="text" class="input-field" placeholder="0"
-                        formControlName="balanceInLbp" />
+                    <input type="text" class="input-field" placeholder="0" formControlName="balanceInLbp" />
                     @if(this.form.value.accountAndFinancial?.balanceInLbp){
-                    <button class="styless-button" (click)="this.form.get('accountAndFinancial.balanceInLbp')?.reset();">
+                    <button type="button" class="styless-button"
+                        (click)="this.form.get('accountAndFinancial.balanceInLbp')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -215,10 +223,10 @@
                 <span>Paid this month in USD</span>
                 <div class="input-with-icon green-input-field">
                     <span style="padding-right: 5px;">$</span>
-                    <input type="text" class="input-field" placeholder="0.00"
-                        formControlName="paidThisMonthUsd" />
+                    <input type="text" class="input-field" placeholder="0.00" formControlName="paidThisMonthUsd" />
                     @if(this.form.value.accountAndFinancial?.paidThisMonthUsd){
-                    <button class="styless-button" (click)="this.form.get('accountAndFinancial.paidThisMonthUsd')?.reset();">
+                    <button type="button" class="styless-button"
+                        (click)="this.form.get('accountAndFinancial.paidThisMonthUsd')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -229,10 +237,10 @@
                 <span>Paid this month in LBP</span>
                 <div class="input-with-icon green-input-field">
                     <span style="padding-right: 5px;">L.L</span>
-                    <input type="text" class="input-field" placeholder="0"
-                        formControlName="paidThisMonthLbp" />
+                    <input type="text" class="input-field" placeholder="0" formControlName="paidThisMonthLbp" />
                     @if(this.form.value.accountAndFinancial?.paidThisMonthLbp){
-                    <button class="styless-button" (click)="this.form.get('accountAndFinancial.paidThisMonthLbp')?.reset();">
+                    <button type="button" class="styless-button"
+                        (click)="this.form.get('accountAndFinancial.paidThisMonthLbp')?.reset();">
                         <img src="x.svg" class="input-icon" />
                     </button>
                     }
@@ -242,3 +250,4 @@
         </app-info-card>
     </div>
 </form>
+}

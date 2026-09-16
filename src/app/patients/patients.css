@@ -129,3 +129,14 @@ td, th{
     padding: 20px 0px;
     background-color: transparent;
 }
+
+.patinet-rows{
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 20px;
+}
+
+.patinet-rows:hover {
+  background-color: #f1f5f9;
+  border-radius: 20px;
+}

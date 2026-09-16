@@ -28,7 +28,7 @@
         <tbody>
 
             @for ( patient of patients; track patient.fileNumber ){
-                <tr>
+                <tr class="patinet-rows" [routerLink]="['/patient', patient.fileNumber]">
                     <td>{{patient.fileNumber}}</td>
                     <td>{{patient.firstName}}</td>
                     <td>{{patient.fatherName}}</td>

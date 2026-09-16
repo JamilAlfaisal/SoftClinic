@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 
-export type Gender = 'Male' | 'Female' | 'Other';
+export type Gender = 'Male' | 'Female';
 
 export interface Patient {
   fileNumber: string;
@@ -12,8 +12,8 @@ export interface Patient {
   nationality: string;
   idNumber: string;
   phone1: string;
-  phone2?: string;
-  email?: string;
+  phone2: string|null;
+  email: string|null;
   addressDetails: string;
   city: string;
   country: string;
