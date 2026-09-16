@@ -179,3 +179,13 @@
     border: 1px solid #17824A !important;
     background-color: #EAF7F1 !important;
 }
+
+
+.input-with-icon:has(input.ng-touched.ng-invalid, select.ng-touched.ng-invalid ){
+    border: 1px solid red !important;
+}
+
+#delete-button{
+    color: red;
+    font-size: medium;
+}   

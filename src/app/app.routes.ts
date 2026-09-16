@@ -31,5 +31,10 @@ export const routes: Routes = [
         path: 'add-patients',
         component: AddPatients,
         canMatch: [protectedRoutes]
+    },
+    {
+        path: 'patient/:fileNumber',
+        component: AddPatients,
+        canMatch: [protectedRoutes]
     }
 ];
