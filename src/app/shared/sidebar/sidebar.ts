@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NgClass } from '../../../../node_modules/@angular/common/types/_common_module-chunk';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +16,7 @@ import { NgClass } from '../../../../node_modules/@angular/common/types/_common_
 export class Sidebar {
 
   
-
+  router = inject(Router)
   drawerOpen = signal<boolean>(true);
   selectedOption = signal<number>(1);
 
@@ -26,6 +27,11 @@ export class Sidebar {
     this.drawerOpen.update((prev) =>{
       return !prev
     })
+  }
+
+  logout(){
+    localStorage.setItem('isAuthenticated', 'false');
+    this.router.navigateByUrl('/login')
   }
 
 }

@@ -175,3 +175,7 @@ ul{
     display: flex;
     justify-content: space-between;
 }
+
+.display div:hover{
+    display: none;
+}

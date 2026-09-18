@@ -121,16 +121,19 @@
                 <p>Administrator</p>
             </div>
         </div>
-        <button class="styless-button">
+        <button class="styless-button" (click)="logout()">
             <img src="menu_2.svg" alt="Logout" class="">
         </button>
     </footer>
 </div>
 }@else{
-<header class="sidebar-header">
+<header class="sidebar-header display">
     <div class="row">
         <img src="Soft Clinic.svg" alt="SoftClinic Logo" class="logo">
     </div>
+    <button type="button" class="styless-button" (click)="toggleDrawer()">
+        <img src="menu.svg" alt="Menu" class="menu-icon">
+    </button>
 </header>
 <div class="main-content">
     <nav class="sidebar-nav">
@@ -163,11 +166,11 @@
                     <img src="bell.svg" alt="Settings" class="menu-icon">
                 </div>
             </li>
-            <li>
+            <!-- <li>
                 <button type="button" class="styless-button" (click)="toggleDrawer()">
                     <img src="menu.svg" alt="Menu" class="menu-icon">
                 </button>
-            </li>
+            </li> -->
         </ul>
     </nav>
     <footer class="sidebar-footer">
